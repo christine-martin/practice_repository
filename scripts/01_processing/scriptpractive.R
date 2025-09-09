@@ -18,7 +18,8 @@ ggplot(data = data_heatwaves,
 p <- ggplot(data = data_heatwaves,
             mapping = aes(x = year, y = temp_mean,
                           group = paste(fishery, eu_rnpa), colour = "orange")) +
-  geom_line()
+  geom_line() +
+  facet_wrap(~ fishery, ncol = 2, scales = "free_y")
 
 
 ggsave(plot = p,
